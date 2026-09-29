@@ -1,0 +1,183 @@
+/* ===== RESET BÁSICO ===== */
+/* Remove espaçamentos padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== VARIÁVEIS DE COR ===== */
+/* Assim fica fácil trocar as cores depois em um só lugar */
+:root {
+  --azul: #1e5fa8;          /* cor principal */
+  --azul-claro: #e8f0fa;    /* fundo suave */
+  --branco: #ffffff;
+  --cinza-texto: #444;
+  --cinza-claro: #f5f7fa;
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --borda-azul: 2px solid var(--azul);
+}
+
+/* ===== CORPO DA PÁGINA ===== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--cinza-texto);
+  line-height: 1.5;
+  padding-bottom: 40px;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  background-color: var(--azul);
+  color: var(--branco);
+  text-align: center;
+  padding: 24px 16px;
+  box-shadow: var(--sombra);
+}
+
+.cabecalho h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.estudante {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+/* ===== CARDS DE RESUMO ===== */
+.cards {
+  display: grid;
+  /* No celular fica 1 coluna, no computador várias */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.card {
+  background-color: var(--branco);
+  border: var(--borda-azul);
+  border-radius: 4px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.card .titulo-card {
+  font-size: 13px;
+  color: var(--azul);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.card .valor-card {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--cinza-texto);
+}
+
+/* ===== TABELA ===== */
+.tabela-container {
+  background-color: var(--branco);
+  border: var(--borda-azul);
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: var(--sombra);
+}
+
+.tabela-container h2 {
+  color: var(--azul);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* Permite rolar a tabela para o lado no celular */
+.tabela-rolavel {
+  overflow-x: auto;
+}
+
+.tabela-notas {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px; /* garante que a tabela não "esprema" no celular */
+}
+
+.tabela-notas th,
+.tabela-notas td {
+  padding: 10px 8px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.tabela-notas th {
+  background-color: var(--azul);
+  color: var(--branco);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.tabela-notas td:first-child,
+.tabela-notas th:first-child {
+  text-align: left;
+}
+
+/* Linhas alternadas para facilitar leitura */
+.tabela-notas tbody tr:nth-child(even) {
+  background-color: var(--azul-claro);
+}
+
+/* Cores das situações */
+.situacao-bom {
+  color: #1a7f37;
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: #b45309;
+  font-weight: bold;
+}
+
+.situacao-sem-nota {
+  color: #777;
+  font-style: italic;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-top: 30px;
+}
+
+/* ===== AJUSTES PARA CELULAR ===== */
+@media (max-width: 480px) {
+  .cabecalho h1 {
+    font-size: 22px;
+  }
+
+  .subtitulo {
+    font-size: 16px;
+  }
+
+  .card .valor-card {
+    font-size: 18px;
+  }
+}
