@@ -11,40 +11,63 @@
   <!-- CABEÇALHO -->
   <header class="cabecalho">
     <h1>Boletim Digital</h1>
-    <p class="subtitulo">9º Ano</p>
-    <p class="estudante">Estudante Exemplo</p>
+    <p class="subtitulo">9º Ano — Turma 9C</p>
+    <p class="estudante">Chamada nº 24</p>
   </header>
 
   <main class="conteudo">
 
-    <!-- CARDS DE RESUMO -->
-    <section class="cards" id="cards">
-      <!-- Os cards serão criados pelo JavaScript -->
-    </section>
-
-    <!-- TABELA DE NOTAS -->
-    <section class="tabela-container">
-      <h2>Notas por disciplina</h2>
-
-      <div class="tabela-rolavel">
-        <table class="tabela-notas">
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>1º Tri</th>
-              <th>2º Tri</th>
-              <th>3º Tri</th>
-              <th>Média</th>
-              <th>Faltas</th>
-              <th>Situação</th>
-            </tr>
-          </thead>
-          <tbody id="corpo-tabela">
-            <!-- As linhas serão criadas pelo JavaScript -->
-          </tbody>
-        </table>
+    <!-- ÁREA DE ACESSO POR PIN -->
+    <section class="area-login" id="area-login">
+      <h2>Acesso ao Boletim</h2>
+      <div class="login-box">
+        <label for="pin-input">Digite seu PIN:</label>
+        <input type="password" id="pin-input" maxlength="20" placeholder="PIN" />
+        <button id="btn-entrar" onclick="abrirBoletim()">Entrar</button>
       </div>
+      <p id="msg-login" class="mensagem"></p>
     </section>
+
+    <!-- ÁREA DO BOLETIM (Oculta até o login) -->
+    <div id="area-boletim" style="display: none;">
+
+      <!-- AÇÕES DO ESTUDANTE -->
+      <div class="painel-acoes">
+        <button id="btn-alterar" onclick="alternarEdicao()">Alterar dados</button>
+        <button id="btn-salvar" onclick="salvarAlteracoes()" style="display: none;">Salvar alterações</button>
+        <p id="msg-boletim" class="mensagem"></p>
+      </div>
+
+      <!-- CARDS DE RESUMO -->
+      <section class="cards" id="cards">
+        <!-- Os cards serão criados pelo JavaScript -->
+      </section>
+
+      <!-- TABELA DE NOTAS -->
+      <section class="tabela-container">
+        <h2>Notas por disciplina</h2>
+
+        <div class="tabela-rolavel">
+          <table class="tabela-notas">
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Média</th>
+                <th>Faltas</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela">
+              <!-- As linhas serão criadas pelo JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
 
   </main>
 

@@ -16,6 +16,8 @@
   --cinza-claro: #f5f7fa;
   --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
   --borda-azul: 2px solid var(--azul);
+  --vermelho-erro: #c53030;
+  --verde-sucesso: #276749;
 }
 
 /* ===== CORPO DA PÁGINA ===== */
@@ -57,6 +59,103 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 16px;
+}
+
+/* ===== ÁREA DE ACESSO POR PIN ===== */
+.area-login {
+  background-color: var(--branco);
+  border: var(--borda-azul);
+  border-radius: 4px;
+  padding: 24px 16px;
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.area-login h2 {
+  color: var(--azul);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.login-box label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.login-box input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+}
+
+.login-box button,
+.painel-acoes button {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-box button:hover,
+.painel-acoes button:hover {
+  background-color: #16477e;
+}
+
+/* ===== PAINEL DE AÇÕES DO BOLETIM ===== */
+.painel-acoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mensagem {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+.mensagem.erro {
+  color: var(--vermelho-erro);
+}
+
+.mensagem.sucesso {
+  color: var(--verde-sucesso);
+}
+
+/* ===== ENTRADAS DE EDIÇÃO NA TABELA ===== */
+.input-edicao {
+  width: 60px;
+  padding: 4px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-edicao.invalido {
+  border-color: var(--vermelho-erro);
+  background-color: #fff5f5;
 }
 
 /* ===== CARDS DE RESUMO ===== */
